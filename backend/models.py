@@ -11,7 +11,7 @@ AGENT_ROSTER = [
         "name": "Archaeologist",
         "icon": "🔍",
         "description": "Legacy code analyst. Discovers, counts, maps dependencies, documents findings in .aire/archaeology/.",
-        "default_model": "claude-opus-4-5",
+        "default_model": "claude-opus-4-6",
         "anthropic_agent_id": "",  # filled after provisioning
     },
     {
@@ -19,7 +19,7 @@ AGENT_ROSTER = [
         "name": "Architect",
         "icon": "🏛",
         "description": "Makes architecture decisions. Writes to .aire/decisions/.",
-        "default_model": "claude-opus-4-5",
+        "default_model": "claude-opus-4-6",
         "anthropic_agent_id": "",
     },
     {
@@ -27,7 +27,7 @@ AGENT_ROSTER = [
         "name": "Builder",
         "icon": "🔨",
         "description": "Implements features. Writes code, tests, and documentation.",
-        "default_model": "claude-sonnet-4-5",
+        "default_model": "claude-sonnet-4-6",
         "anthropic_agent_id": "",
     },
     {
@@ -35,7 +35,7 @@ AGENT_ROSTER = [
         "name": "QA",
         "icon": "✅",
         "description": "Validates implementations. Writes and runs tests.",
-        "default_model": "claude-sonnet-4-5",
+        "default_model": "claude-sonnet-4-6",
         "anthropic_agent_id": "",
     },
     {
@@ -43,7 +43,7 @@ AGENT_ROSTER = [
         "name": "DevOps",
         "icon": "🚀",
         "description": "CI/CD, infrastructure, deployment pipelines.",
-        "default_model": "claude-sonnet-4-5",
+        "default_model": "claude-sonnet-4-6",
         "anthropic_agent_id": "",
     },
 ]

@@ -23,13 +23,13 @@ async def create_agent(name: str, model: str, system_prompt: str) -> dict:
         r = await client.post(f"{BASE}/v1/agents", headers=HEADERS, json={
             "name": name,
             "model": model,
-            "system_prompt": system_prompt,
-            "tools": [
-                {"type": "bash"},
-                {"type": "text_editor_20241022"},
-            ],
+            "system": system_prompt,                        # field is "system" not "system_prompt"
+            "tools": [{"type": "agent_toolset_20260401"}],  # full toolset: bash, files, web search
         })
-        r.raise_for_status()
+        if not r.is_success:
+            raise httpx.HTTPStatusError(
+                f"{r.status_code}: {r.text}", request=r.request, response=r
+            )
         return r.json()
 
 
