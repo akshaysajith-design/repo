@@ -27,7 +27,19 @@ async def lifespan(app: FastAPI):
     await db.init_db()
     yield
 
-app = FastAPI(title="AIRE UI API", lifespan=lifespan)
+app = FastAPI(title="AIRE UI API", lifespan=lifespan, debug=True)
+
+# Surface full exception details in responses during development
+from fastapi.responses import JSONResponse
+from fastapi.requests import Request
+import traceback
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    return JSONResponse(
+        status_code=500,
+        content={"error": str(exc), "detail": traceback.format_exc()},
+    )
 
 app.add_middleware(
     CORSMiddleware,
